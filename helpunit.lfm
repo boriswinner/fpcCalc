@@ -1,0 +1,51 @@
+object HelpForm: THelpForm
+  Left = 406
+  Height = 295
+  Top = 213
+  Width = 429
+  ActiveControl = OkButton
+  Caption = 'Help'
+  ClientHeight = 295
+  ClientWidth = 429
+  Constraints.MaxHeight = 295
+  Constraints.MaxWidth = 429
+  Constraints.MinHeight = 295
+  Constraints.MinWidth = 429
+  Position = poDesktopCenter
+  LCLVersion = '1.6.0.4'
+  object HepMemo: TMemo
+    Left = 8
+    Height = 251
+    Top = 8
+    Width = 410
+    Lines.Strings = (
+      'This calculator has only Simple mode.'
+      ''
+      'Main features:'
+      '-keyboard input (with Esc, Backspace, etc.);'
+      '-shortcuts and hotkeys;'
+      '-buffer (shows the inner memory buffer of the calc).'
+      ''
+      'Shortcuts and hotkeys:'
+      '-Ctrl+C: copy the number;'
+      '-Crtl+V: paste the number (the existing number is deleted);'
+      '-Ctrl+Q: M-;'
+      '-Ctrl+P: M+;'
+      '-Ctrl+R: MR;'
+      '-Ctrl+L: MC;'
+      '-r: 1/x;'
+      '-F9: +/-.'
+    )
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object OkButton: TButton
+    Left = 8
+    Height = 25
+    Top = 264
+    Width = 75
+    Caption = 'Ok'
+    OnClick = OkButtonClick
+    TabOrder = 1
+  end
+end

@@ -1,0 +1,65 @@
+object AboutForm: TAboutForm
+  Left = 278
+  Height = 243
+  Top = 206
+  Width = 429
+  ActiveControl = OkButton
+  Caption = 'About the program'
+  ClientHeight = 243
+  ClientWidth = 429
+  Constraints.MaxHeight = 243
+  Constraints.MaxWidth = 429
+  Constraints.MinHeight = 243
+  Constraints.MinWidth = 429
+  Position = poDesktopCenter
+  LCLVersion = '1.4.4.0'
+  object LicenseMemo: TMemo
+    Left = 10
+    Height = 192
+    Top = 8
+    Width = 410
+    Lines.Strings = (
+      '    fpcCalc - a simple calculator on Lazarus&Free Pascal'
+      '    Copyright (C) 2016 Boris Timofeenko'
+      ''
+      '    This program is free software: you can redistribute it and/or modify'
+      '    it under the terms of the GNU General Public License as published by'
+      '    the Free Software Foundation, either version 3 of the License, or'
+      '    (at your option) any later version.'
+      ''
+      '    This program is distributed in the hope that it will be useful,'
+      '    but WITHOUT ANY WARRANTY; without even the implied warranty of'
+      '    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the'
+      '    GNU General Public License for more details.'
+    )
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object LicenseButton: TButton
+    Left = 10
+    Height = 25
+    Top = 208
+    Width = 86
+    Caption = 'Show License'
+    OnClick = LicenseButtonClick
+    TabOrder = 1
+  end
+  object OkButton: TButton
+    Left = 336
+    Height = 25
+    Top = 208
+    Width = 83
+    Caption = 'Ok'
+    OnClick = OkButtonClick
+    TabOrder = 2
+  end
+  object GitHubButton: TButton
+    Left = 168
+    Height = 25
+    Top = 208
+    Width = 88
+    Caption = 'GitHub page'
+    OnClick = GitHubButtonClick
+    TabOrder = 3
+  end
+end

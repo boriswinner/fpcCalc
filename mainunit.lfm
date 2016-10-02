@@ -1,0 +1,384 @@
+object MainForm: TMainForm
+  Left = 555
+  Height = 274
+  Top = 452
+  Width = 256
+  Align = alRight
+  Anchors = []
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'fpcCalc'
+  ClientHeight = 254
+  ClientWidth = 256
+  Color = clGradientInactiveCaption
+  KeyPreview = True
+  Menu = CalcMenu
+  OnCreate = CButtonClick
+  OnKeyPress = KeyboardInput
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '1.6.0.4'
+  object ButtonsPanel: TPanel
+    Left = 0
+    Height = 208
+    Top = 48
+    Width = 256
+    Align = alCustom
+    ClientHeight = 208
+    ClientWidth = 256
+    TabOrder = 0
+    object BackspaceButton: TSpeedButton
+      Left = 48
+      Height = 25
+      Top = 8
+      Width = 88
+      Align = alCustom
+      Caption = 'Backspace'
+      OnClick = BackspaceButtonClick
+    end
+    object CEButton: TSpeedButton
+      Left = 144
+      Height = 25
+      Top = 8
+      Width = 50
+      Caption = 'CE'
+      OnClick = CEButtonClick
+    end
+    object CButton: TSpeedButton
+      Left = 198
+      Height = 25
+      Top = 8
+      Width = 50
+      Caption = 'C'
+      OnClick = CButtonClick
+    end
+    object DigButton7: TSpeedButton
+      Left = 48
+      Height = 40
+      Top = 40
+      Width = 40
+      Caption = '7'
+      OnClick = CommaAndDigitsClick
+    end
+    object DigButton8: TSpeedButton
+      Left = 88
+      Height = 40
+      Top = 40
+      Width = 40
+      Caption = '8'
+      OnClick = CommaAndDigitsClick
+    end
+    object DigButton9: TSpeedButton
+      Left = 128
+      Height = 40
+      Top = 40
+      Width = 40
+      Caption = '9'
+      OnClick = CommaAndDigitsClick
+    end
+    object DivisionButton: TSpeedButton
+      Left = 168
+      Height = 40
+      Top = 40
+      Width = 40
+      Caption = '/'
+      OnClick = ArithmeticButtonsClick
+    end
+    object SqrtButton: TSpeedButton
+      Left = 208
+      Height = 40
+      Top = 40
+      Width = 40
+      Caption = 'sqrt'
+      OnClick = SqrtButtonClick
+    end
+    object MCButton: TSpeedButton
+      Left = 7
+      Height = 32
+      Top = 8
+      Width = 33
+      Caption = 'MC'
+      OnClick = BufferOperations
+    end
+    object PercentButton: TSpeedButton
+      Left = 208
+      Height = 40
+      Top = 80
+      Width = 40
+      Caption = '%'
+      OnClick = PercentButtonClick
+    end
+    object MultiplicationButton: TSpeedButton
+      Left = 168
+      Height = 40
+      Top = 80
+      Width = 40
+      Caption = '*'
+      OnClick = ArithmeticButtonsClick
+    end
+    object DigButton6: TSpeedButton
+      Left = 128
+      Height = 40
+      Top = 80
+      Width = 40
+      Caption = '6'
+      OnClick = CommaAndDigitsClick
+    end
+    object DigButton5: TSpeedButton
+      Left = 88
+      Height = 40
+      Top = 80
+      Width = 40
+      Caption = '5'
+      OnClick = CommaAndDigitsClick
+    end
+    object DigButton4: TSpeedButton
+      Left = 48
+      Height = 40
+      Top = 80
+      Width = 40
+      Caption = '4'
+      OnClick = CommaAndDigitsClick
+    end
+    object MRButton: TSpeedButton
+      Left = 7
+      Height = 40
+      Top = 40
+      Width = 33
+      Caption = 'MR'
+      OnClick = BufferOperations
+    end
+    object ReverseDivisionButton: TSpeedButton
+      Left = 208
+      Height = 40
+      Top = 120
+      Width = 40
+      Caption = '1/x'
+      OnClick = ReverseDivisionButtonClick
+    end
+    object MinusButton: TSpeedButton
+      Left = 168
+      Height = 40
+      Top = 120
+      Width = 40
+      Caption = '-'
+      OnClick = ArithmeticButtonsClick
+    end
+    object DigButton3: TSpeedButton
+      Left = 128
+      Height = 40
+      Top = 120
+      Width = 40
+      Caption = '3'
+      OnClick = CommaAndDigitsClick
+    end
+    object DigButton2: TSpeedButton
+      Left = 88
+      Height = 40
+      Top = 120
+      Width = 40
+      Caption = '2'
+      OnClick = CommaAndDigitsClick
+    end
+    object DigButton1: TSpeedButton
+      Left = 48
+      Height = 40
+      Top = 120
+      Width = 40
+      Caption = '1'
+      OnClick = CommaAndDigitsClick
+    end
+    object MSButton: TSpeedButton
+      Left = 7
+      Height = 40
+      Top = 80
+      Width = 33
+      Caption = 'MS'
+      OnClick = BufferOperations
+    end
+    object CommaButton: TSpeedButton
+      Left = 128
+      Height = 40
+      Top = 160
+      Width = 40
+      Caption = ','
+      OnClick = CommaAndDigitsClick
+    end
+    object PlusMinusButton: TSpeedButton
+      Left = 88
+      Height = 40
+      Top = 160
+      Width = 40
+      Caption = '+/-'
+      OnClick = PlusMinusButtonClick
+    end
+    object DigButton0: TSpeedButton
+      Left = 48
+      Height = 40
+      Top = 160
+      Width = 40
+      Caption = '0'
+      OnClick = CommaAndDigitsClick
+    end
+    object MPlusButton: TSpeedButton
+      Left = 7
+      Height = 40
+      Top = 120
+      Width = 33
+      Caption = 'M+'
+      OnClick = BufferOperations
+    end
+    object EqualButton: TSpeedButton
+      Left = 208
+      Height = 40
+      Top = 160
+      Width = 40
+      Caption = '='
+      OnClick = EqualButtonClick
+    end
+    object PlusButton: TSpeedButton
+      Left = 168
+      Height = 40
+      Top = 160
+      Width = 40
+      Caption = '+'
+      OnClick = ArithmeticButtonsClick
+    end
+    object MMinusButton: TSpeedButton
+      Left = 7
+      Height = 40
+      Top = 160
+      Width = 33
+      Caption = 'M-'
+      OnClick = BufferOperations
+    end
+  end
+  object OutputEdit: TEdit
+    Left = 7
+    Height = 23
+    Top = 24
+    Width = 240
+    Alignment = taRightJustify
+    AutoSize = False
+    NumbersOnly = True
+    OnEnter = OutputEditEnter
+    OnExit = OutputEditExit
+    ReadOnly = True
+    TabOrder = 1
+    Text = '0.'
+  end
+  object HistoryLabel: TLabel
+    Left = 101
+    Height = 15
+    Top = 8
+    Width = 146
+    Alignment = taRightJustify
+    AutoSize = False
+    ParentColor = False
+  end
+  object BufferLabel: TLabel
+    Left = 8
+    Height = 15
+    Top = 8
+    Width = 113
+    AutoSize = False
+    Caption = 'Buffer: 0'
+    ParentColor = False
+  end
+  object ShortcutsActionList: TActionList
+    left = 96
+    top = 192
+    object CtrlCAction: TAction
+      Caption = 'CtrlCAction'
+      OnExecute = CtrlCActionExecute
+      ShortCut = 16451
+    end
+    object CtrlVAction: TAction
+      Caption = 'CtrlVAction'
+      OnExecute = CtrlVActionExecute
+      ShortCut = 16470
+    end
+    object MMinusAction: TAction
+      Caption = 'MMinusAction'
+      OnExecute = MMinusActionExecute
+      ShortCut = 16465
+    end
+    object MPlusAction: TAction
+      Caption = 'MPlusAction'
+      OnExecute = MPlusActionExecute
+      ShortCut = 16464
+    end
+    object MSAction: TAction
+      Caption = 'MSAction'
+      OnExecute = MSActionExecute
+      ShortCut = 16461
+    end
+    object MRAction: TAction
+      Caption = 'MRAction'
+      OnExecute = MRActionExecute
+      ShortCut = 16466
+    end
+    object MCAction: TAction
+      Caption = 'MCAction'
+      OnExecute = MCActionExecute
+      ShortCut = 16460
+    end
+    object CEButtonAction: TAction
+      Caption = 'CEButtonAction'
+      OnExecute = CEButtonActionExecute
+      ShortCut = 46
+    end
+    object PlusMinusButtonAction: TAction
+      Caption = 'PlusMinusButtonAction'
+      OnExecute = PlusMinusButtonActionExecute
+      ShortCut = 120
+    end
+    object ReverseDivisionAction: TAction
+      Caption = 'ReverseDivisionAction'
+      OnExecute = ReverseDivisionActionExecute
+      ShortCut = 82
+    end
+  end
+  object CalcMenu: TMainMenu
+    left = 136
+    top = 192
+    object ViewSubMenu: TMenuItem
+      Caption = 'View'
+      Visible = False
+      object NormalModeMenuItem: TMenuItem
+        Caption = 'Normal mode'
+        OnClick = NormalModeMenuItemClick
+      end
+      object EngModeMenuItem: TMenuItem
+        Caption = 'Engineering Mode'
+        OnClick = EngModeMenuItemClick
+      end
+    end
+    object EditSubMenu: TMenuItem
+      Caption = 'Edit'
+      object CopyMenuItem: TMenuItem
+        Caption = 'Copy'
+        ShortCut = 16451
+        OnClick = CopyMenuItemClick
+      end
+      object PasteMenuItem: TMenuItem
+        Caption = 'Paste'
+        ShortCut = 16470
+        OnClick = PasteMenuItemClick
+      end
+    end
+    object HelpSubMenu: TMenuItem
+      Caption = 'Help'
+      object HelpMenuItem: TMenuItem
+        Caption = 'Help'
+        ShortCut = 112
+        OnClick = HelpMenuItemClick
+      end
+      object AboutMenuItem: TMenuItem
+        Caption = 'About'
+        ShortCut = 16496
+        OnClick = AboutMenuItemClick
+      end
+    end
+  end
+end
