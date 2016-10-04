@@ -18,14 +18,9 @@ type
     CEButtonAction: TAction;
     CalcMenu: TMainMenu;
     EditSubMenu: TMenuItem;
-    CopyMenuItem: TMenuItem;
     HelpSubMenu: TMenuItem;
     HelpMenuItem: TMenuItem;
     AboutMenuItem: TMenuItem;
-    PasteMenuItem: TMenuItem;
-    NormalModeMenuItem: TMenuItem;
-    EngModeMenuItem: TMenuItem;
-    ViewSubMenu: TMenuItem;
     MPlusAction: TAction;
     MSAction: TAction;
     MRAction: TAction;
@@ -68,14 +63,12 @@ type
     ButtonsPanel: TPanel;
     procedure AboutMenuItemClick(Sender: TObject);
     procedure CEButtonActionExecute(Sender: TObject);
-    procedure CopyMenuItemClick(Sender: TObject);
     procedure CtrlCActionExecute(Sender: TObject);
     procedure BackspaceButtonClick(Sender: TObject);
     procedure CtrlVActionExecute(Sender: TObject);
     procedure CommaAndDigitsClick(Sender: TObject);
     procedure CButtonClick(Sender: TObject);
     procedure CEButtonClick(Sender: TObject);
-    procedure EngModeMenuItemClick(Sender: TObject);
     procedure EqualButtonClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure HelpMenuItemClick(Sender: TObject);
@@ -86,10 +79,8 @@ type
     procedure MPlusActionExecute(Sender: TObject);
     procedure MRActionExecute(Sender: TObject);
     procedure MSActionExecute(Sender: TObject);
-    procedure NormalModeMenuItemClick(Sender: TObject);
     procedure OutputEditEnter(Sender: TObject);
     procedure OutputEditExit(Sender: TObject);
-    procedure PasteMenuItemClick(Sender: TObject);
     procedure PercentButtonClick(Sender: TObject);
     procedure ArithmeticButtonsClick(Sender: TObject);
     procedure PlusMinusButtonClick(Sender: TObject);
@@ -112,13 +103,14 @@ implementation
 {$R *.lfm}
 uses
   AboutUnit, HelpUnit;
+
 { TMainForm }
-//обработчик цифр и знака ','
+
 procedure TMainForm.CommaAndDigitsClick(Sender: TObject);
 var
   button: string;
 begin
-  if (pos('E',OutputEdit.Text) <> 0) then CEButton.Click;
+  if (pos('E',OutputEdit.Text) <> 0) THEN CEButton.Click;
   button := TButton(Sender).Caption;
   if (StrToIntDef(button,10) < 10) AND (length(OutputEdit.Text)>14) THEN exit;
   if (button = ',') AND (pos(',',OutputEdit.Text) <> 0) THEN exit;
@@ -127,20 +119,21 @@ begin
   else
     OutputEdit.Text := OutputEdit.Text + button;
 end;
-//Нажатие кнопки стирания
+
 procedure TMainForm.BackspaceButtonClick(Sender: TObject);
 var
   s: string;
 begin
   if (pos('E',OutputEdit.Text) <> 0) THEN exit;
   s := OutputEdit.Text;
-  if (length(s) = 1) OR ((length(s)=2) AND (s[1]='-')) THEN s := '0' else delete(s,length(s),1);
+  if (length(s) = 1) OR ((length(s)=2) AND (s[1]='-')) THEN s := '0' else
+    delete(s,length(s),1);
   OutputEdit.Text := s;
 end;
 
 procedure TMainForm.CtrlVActionExecute(Sender: TObject);
 begin
-  if (Clipboard.AsText <> '') then OutputEdit.Text := Clipboard.AsText;
+  if (Clipboard.AsText <> '') THEN OutputEdit.Text := Clipboard.AsText;
 end;
 
 procedure TMainForm.CtrlCActionExecute(Sender: TObject);
@@ -151,11 +144,6 @@ end;
 procedure TMainForm.CEButtonActionExecute(Sender: TObject);
 begin
   CEButton.Click;
-end;
-
-procedure TMainForm.CopyMenuItemClick(Sender: TObject);
-begin
-  CtrlCAction.Execute;
 end;
 
 procedure TMainForm.AboutMenuItemClick(Sender: TObject);
@@ -182,19 +170,6 @@ end;
 procedure TMainForm.CEButtonClick(Sender: TObject);
 begin
   OutputEdit.Text := '0';
-end;
-
-procedure TMainForm.EngModeMenuItemClick(Sender: TObject);
-begin
-  if (mode = false) THEN
-    begin
-      MainForm.Width := MainForm.Width + 256;
-      ButtonsPanel.Left := ButtonsPanel.Left + 256;
-      BufferLabel.Left := BufferLabel.Left + 256;
-      OutputEdit.Left := OutputEdit.Left + 256;
-      HistoryLabel.Left := HistoryLabel.Left + 256;
-      mode := true;
-    end;
 end;
 
 procedure TMainForm.EqualButtonClick(Sender: TObject);
@@ -232,7 +207,7 @@ begin
     except
       on Exception do
       begin
-        OutputEdit.Text := 'Exception! Maybe you got out of range?';
+        OutputEdit.Text := 'Exception: out of range';
       end;
     end;
   end;
@@ -317,19 +292,6 @@ begin
   MSButton.Click;
 end;
 
-procedure TMainForm.NormalModeMenuItemClick(Sender: TObject);
-begin
-  if (mode = true) THEN
-  begin
-    MainForm.Width := MainForm.Width - 256;
-    ButtonsPanel.Left := ButtonsPanel.Left - 256;
-    BufferLabel.Left := BufferLabel.Left - 256;
-    OutputEdit.Left := OutputEdit.Left - 256;
-    HistoryLabel.Left := HistoryLabel.Left - 256;
-    mode := false;
-  end;
-end;
-
 //хак для убирания фокуса с поля вывода
 procedure TMainForm.OutputEditEnter(Sender: TObject);
 begin
@@ -341,10 +303,6 @@ begin
   OutputEdit.Enabled := true;
 end;
 //конец хака
-procedure TMainForm.PasteMenuItemClick(Sender: TObject);
-begin
-  CtrlVAction.Execute;
-end;
 
 //кнопка процента
 procedure TMainForm.PercentButtonClick(Sender: TObject);
@@ -428,7 +386,7 @@ begin
     on Exception do
     begin
       CButton.Click;
-      OutputEdit.Text := 'Error: taking root from NaN or number less than 0';
+      OutputEdit.Text := 'Error: invalid input';
     end;
   end;
 end;

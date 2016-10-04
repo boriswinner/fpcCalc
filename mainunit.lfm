@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 555
+  Left = 845
   Height = 274
-  Top = 452
+  Top = 160
   Width = 256
   Align = alRight
   Anchors = []
@@ -17,7 +17,7 @@ object MainForm: TMainForm
   OnKeyPress = KeyboardInput
   OnShow = FormShow
   Position = poDesktopCenter
-  LCLVersion = '1.6.0.4'
+  LCLVersion = '1.2.6.0'
   object ButtonsPanel: TPanel
     Left = 0
     Height = 208
@@ -260,7 +260,6 @@ object MainForm: TMainForm
     Width = 240
     Alignment = taRightJustify
     AutoSize = False
-    NumbersOnly = True
     OnEnter = OutputEditEnter
     OnExit = OutputEditExit
     ReadOnly = True
@@ -289,7 +288,7 @@ object MainForm: TMainForm
     left = 96
     top = 192
     object CtrlCAction: TAction
-      Caption = 'CtrlCAction'
+      Caption = 'Copy'
       OnExecute = CtrlCActionExecute
       ShortCut = 16451
     end
@@ -342,29 +341,14 @@ object MainForm: TMainForm
   object CalcMenu: TMainMenu
     left = 136
     top = 192
-    object ViewSubMenu: TMenuItem
-      Caption = 'View'
-      Visible = False
-      object NormalModeMenuItem: TMenuItem
-        Caption = 'Normal mode'
-        OnClick = NormalModeMenuItemClick
-      end
-      object EngModeMenuItem: TMenuItem
-        Caption = 'Engineering Mode'
-        OnClick = EngModeMenuItemClick
-      end
-    end
     object EditSubMenu: TMenuItem
       Caption = 'Edit'
       object CopyMenuItem: TMenuItem
-        Caption = 'Copy'
-        ShortCut = 16451
-        OnClick = CopyMenuItemClick
+        Action = CtrlCAction
       end
       object PasteMenuItem: TMenuItem
+        Action = CtrlVAction
         Caption = 'Paste'
-        ShortCut = 16470
-        OnClick = PasteMenuItemClick
       end
     end
     object HelpSubMenu: TMenuItem
