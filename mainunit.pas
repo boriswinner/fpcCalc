@@ -5,7 +5,7 @@ unit MainUnit;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls,
   StdCtrls, Buttons, LCLType, ActnList, Clipbrd, Menus;
 
 type
@@ -70,7 +70,6 @@ type
     procedure CButtonClick(Sender: TObject);
     procedure CEButtonClick(Sender: TObject);
     procedure EqualButtonClick(Sender: TObject);
-    procedure FormShow(Sender: TObject);
     procedure HelpMenuItemClick(Sender: TObject);
     procedure KeyboardInput(Sender: TObject; var Key: char);
     procedure BufferOperations(Sender: TObject);
@@ -91,7 +90,7 @@ type
   private
     double1,double2, buffer, double2BAK: extended;
     MathOperationButton,PrevMathButton: string;
-    PreviousButtonWasEqual, PreviousButtonWasAction,mode: boolean;
+    PreviousButtonWasEqual, PreviousButtonWasAction: boolean;
   public
     { public declarations }
   end;
@@ -132,8 +131,17 @@ begin
 end;
 
 procedure TMainForm.CtrlVActionExecute(Sender: TObject);
+var
+  i: integer;
+  s: string;
 begin
-  if (Clipboard.AsText <> '') THEN OutputEdit.Text := Clipboard.AsText;
+  if (Clipboard.AsText <> '') THEN
+    begin
+      s := '';
+      for i := 1 to Length(Clipboard.AsText) do
+        if (ord(Clipboard.AsText[i])>=48) AND (ord(Clipboard.AsText[i])<=57) THEN s := s + Clipboard.AsText[i];
+      if (s <> '') THEN OutputEdit.Text := s;
+    end;
 end;
 
 procedure TMainForm.CtrlCActionExecute(Sender: TObject);
@@ -151,7 +159,6 @@ begin
   AboutForm.ShowModal;
 end;
 
-//сброс калькулятора
 procedure TMainForm.CButtonClick(Sender: TObject);
 begin
   double1 := 0;
@@ -166,7 +173,7 @@ begin
   double2BAK := 0;
   PrevMathButton := '';
 end;
-//Нажатие кнопки Clear Entry
+
 procedure TMainForm.CEButtonClick(Sender: TObject);
 begin
   OutputEdit.Text := '0';
@@ -213,11 +220,6 @@ begin
   end;
   PreviousButtonWasEqual := true;
   PreviousButtonWasAction := false;
-end;
-
-procedure TMainForm.FormShow(Sender: TObject);
-begin
-  mode := false; //Normal mode
 end;
 
 procedure TMainForm.HelpMenuItemClick(Sender: TObject);

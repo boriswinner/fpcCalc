@@ -15,9 +15,8 @@ object MainForm: TMainForm
   Menu = CalcMenu
   OnCreate = CButtonClick
   OnKeyPress = KeyboardInput
-  OnShow = FormShow
   Position = poDesktopCenter
-  LCLVersion = '1.2.6.0'
+  LCLVersion = '1.6.0.4'
   object ButtonsPanel: TPanel
     Left = 0
     Height = 208
