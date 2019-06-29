@@ -1,0 +1,227 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: X\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: 郑建平@夏宗萍 aka  robsean <robsean@126.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: taboutform.caption
+msgid "About the program"
+msgstr "关于程序"
+
+#: taboutform.githubbutton.caption
+msgid "GitHub page"
+msgstr "GitHub网页"
+
+#: taboutform.licensebutton.caption
+msgid "Show License"
+msgstr "显示许可"
+
+#: taboutform.okbutton.caption
+msgctxt "taboutform.okbutton.caption"
+msgid "Ok"
+msgstr "好"
+
+#: thelpform.caption
+msgctxt "thelpform.caption"
+msgid "Help"
+msgstr "帮助"
+
+#: thelpform.okbutton.caption
+msgctxt "thelpform.okbutton.caption"
+msgid "Ok"
+msgstr "好"
+
+#: tmainform.aboutmenuitem.caption
+msgid "About"
+msgstr "关于"
+
+#: tmainform.backspacebutton.caption
+msgid "Backspace"
+msgstr "退格键"
+
+#: tmainform.bufferlabel.caption
+msgid "Buffer: 0"
+msgstr "缓存: 0"
+
+#: tmainform.caption
+msgid "fpcCalc"
+msgstr "fpc计算器"
+
+#: tmainform.cbutton.caption
+msgid "C"
+msgstr "C"
+
+#: tmainform.cebutton.caption
+msgid "CE"
+msgstr "CE"
+
+#: tmainform.cebuttonaction.caption
+msgid "CEButtonAction"
+msgstr "CE按钮动作"
+
+#: tmainform.commabutton.caption
+msgid ","
+msgstr ","
+
+#: tmainform.ctrlcaction.caption
+msgid "Copy"
+msgstr "复制"
+
+#: tmainform.ctrlvaction.caption
+msgid "CtrlVAction"
+msgstr "CtrlV动作"
+
+#: tmainform.digbutton0.caption
+msgid "0"
+msgstr "0"
+
+#: tmainform.digbutton1.caption
+msgid "1"
+msgstr "1"
+
+#: tmainform.digbutton2.caption
+msgid "2"
+msgstr "2"
+
+#: tmainform.digbutton3.caption
+msgid "3"
+msgstr "3"
+
+#: tmainform.digbutton4.caption
+msgid "4"
+msgstr "4"
+
+#: tmainform.digbutton5.caption
+msgid "5"
+msgstr "5"
+
+#: tmainform.digbutton6.caption
+msgid "6"
+msgstr "6"
+
+#: tmainform.digbutton7.caption
+msgid "7"
+msgstr "7"
+
+#: tmainform.digbutton8.caption
+msgid "8"
+msgstr "8"
+
+#: tmainform.digbutton9.caption
+msgid "9"
+msgstr "9"
+
+#: tmainform.divisionbutton.caption
+msgid "/"
+msgstr "/"
+
+#: tmainform.editsubmenu.caption
+msgid "Edit"
+msgstr "编辑"
+
+#: tmainform.equalbutton.caption
+msgid "="
+msgstr "="
+
+#: tmainform.helpmenuitem.caption
+msgctxt "tmainform.helpmenuitem.caption"
+msgid "Help"
+msgstr "标准"
+
+#: tmainform.helpsubmenu.caption
+msgctxt "tmainform.helpsubmenu.caption"
+msgid "Help"
+msgstr "帮助"
+
+#: tmainform.mcaction.caption
+msgid "MCAction"
+msgstr ""
+
+#: tmainform.mcbutton.caption
+msgid "MC"
+msgstr "MC"
+
+#: tmainform.minusbutton.caption
+msgid "-"
+msgstr "-"
+
+#: tmainform.mminusaction.caption
+msgid "MMinusAction"
+msgstr "M减号动作"
+
+#: tmainform.mminusbutton.caption
+msgid "M-"
+msgstr "M-"
+
+#: tmainform.mplusaction.caption
+msgid "MPlusAction"
+msgstr "M加号动作"
+
+#: tmainform.mplusbutton.caption
+msgid "M+"
+msgstr "M+"
+
+#: tmainform.mraction.caption
+msgid "MRAction"
+msgstr "MR动作"
+
+#: tmainform.mrbutton.caption
+msgid "MR"
+msgstr "MR"
+
+#: tmainform.msaction.caption
+msgid "MSAction"
+msgstr "MS动作"
+
+#: tmainform.msbutton.caption
+msgid "MS"
+msgstr "MS"
+
+#: tmainform.multiplicationbutton.caption
+msgid "*"
+msgstr "*"
+
+#: tmainform.outputedit.text
+msgid "0."
+msgstr "0."
+
+#: tmainform.pastemenuitem.caption
+msgid "Paste"
+msgstr "粘贴"
+
+#: tmainform.percentbutton.caption
+msgid "%"
+msgstr "%"
+
+#: tmainform.plusbutton.caption
+msgid "+"
+msgstr "+"
+
+#: tmainform.plusminusbutton.caption
+msgid "+/-"
+msgstr "+/-"
+
+#: tmainform.plusminusbuttonaction.caption
+msgid "PlusMinusButtonAction"
+msgstr "加减按钮动作"
+
+#: tmainform.reversedivisionaction.caption
+msgid "ReverseDivisionAction"
+msgstr "反除法动作"
+
+#: tmainform.reversedivisionbutton.caption
+msgid "1/x"
+msgstr "1/x"
+
+#: tmainform.sqrtbutton.caption
+msgid "sqrt"
+msgstr "sqrt"
+
